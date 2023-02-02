@@ -45,7 +45,7 @@ a:hover {
 }
 
 .bloc-lg {
-    padding: 100px 50px;
+    padding: 50px 50px;
 }
 
 .bloc-md {
@@ -232,6 +232,7 @@ a:hover {
 .l-bloc h6 a,
 .l-bloc p a {
     color: rgba(0, 0, 0, .6);
+    text-decoration: none;
 }
 
 .d-bloc .panel .a-btn:hover,
@@ -285,6 +286,7 @@ a:hover {
 
 #bloc-1-hero h1 {
     font-size: 32px;
+    font-weight: bold;
 }
 
 .navbar {
@@ -303,12 +305,8 @@ a:hover {
 
 .navbar-brand img {
     max-height: 200px;
-    margin: 0 5px 0 0;
-    display: inline;
-}
-
-.navbar-brand img[src$=svg] {
-    min-width: 100px;
+    height: 100px;
+    justify-content: left;
 }
 
 .nav-center .navbar-brand img {
@@ -317,7 +315,6 @@ a:hover {
 
 .navbar .nav {
     padding-top: 2px;
-    margin-right: -16px;
     float: right;
     z-index: 1;
 }
@@ -362,6 +359,11 @@ a:hover {
     z-index: 2;
 }
 
+.site-navigation {
+    list-style-type: none;
+    text-decoration: none;
+}
+
 @media (min-width: 768px) {
     .site-navigation {
         position: absolute;
@@ -401,6 +403,17 @@ a:hover {
         float: none;
         margin: 10px auto 0;
     }
+    .col-sm-6{
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+    }
+}
+
+.row-flex{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .nav > li > .dropdown a {
@@ -506,8 +519,38 @@ button {
 }
 
 .form-control {
-    border-color: rgba(0, 0, 0, .1);
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    background-color: white;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-color: black;
     box-shadow: none;
+}
+
+.form-control-message{
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    background-color: white;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-color: black;
+    box-shadow: none;
+}
+
+.form-group{
+    margin-bottom: 2em;
 }
 
 .scrollToTop {
@@ -651,7 +694,8 @@ label,
 a {
     font-family: "helvetica";
     font-weight: 400;
-    color: #575757!important;
+    color: black;
+    justify-content: center;
 }
 
 .container {
@@ -677,12 +721,14 @@ a {
 }
 
 p {
-    font-size: 11px;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
 .tight-width-whitespace {
     max-width: 600px;
     margin: auto auto auto auto;
+    display: flex;
 }
 
 .h1 {
@@ -702,6 +748,7 @@ p {
 .social {
     max-width: 400px;
     margin: auto auto auto auto;
+    color: rgba(255, 255, 255, .6);
 }
 
 h2 {
@@ -710,7 +757,7 @@ h2 {
 }
 
 h3 {
-    font-size: 15px;
+    font-size: 17px;
     text-transform: uppercase;
     font-weight: 700;
     color: #333333!important;
@@ -723,7 +770,7 @@ h3 {
 }
 
 h1 {
-    color: #333333!important;
+    color: black;
 }
 
 h4 {
@@ -736,16 +783,28 @@ h4 {
 }
 
 .white {
-    color: #FFFFFF!important;
+    color: white;
+    text-align: center;
 }
 
 .portfolio-thumb {
     margin-bottom: 24px;
+    text-align: center;
 }
 
 .portfolio-row {
     margin-bottom: 44px;
     margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-sm-6{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .avatar {
@@ -753,7 +812,8 @@ h4 {
 }
 
 .black-background {
-    background-color: rgba(165, 147, 99, 0.7);
+    background-color: #F3976C;
+    filter: contrast(1.1);
     padding: 40px 40px 40px 40px;
 }
 
@@ -772,10 +832,13 @@ h4 {
 
 .bgc-atomic-tangerine {
     background-color: #F3976C;
+    /*filter: saturate (3)*/
 }
 
 .tc-white {
-    color: #F3976C!important;
+    color: white;
+    text-align: center;
+    filter:brightness(1);
 }
 
 .btn-atomic-tangerine {
@@ -790,6 +853,7 @@ h4 {
 
 .ltc-white {
     color: #FFFFFF!important;
+    text-align: center;
 }
 
 .ltc-white:hover {
@@ -848,13 +912,13 @@ h4 {
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .b-parallax {
         background-attachment: scroll;
     }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
     .b-parallax {
         background-attachment: scroll;
     }
@@ -872,10 +936,7 @@ h4 {
         overflow-x: hidden;
         position: relative;
     }
-    .bloc {
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
-    }
+
     .bloc-group,
     .bloc-group .bloc {
         display: block;
@@ -884,8 +945,6 @@ h4 {
     .bloc-fill-screen .fill-bloc-top-edge,
     .bloc-fill-screen .fill-bloc-bottom-edge {
         padding: 0 20px;
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
     }
 }
 
@@ -900,7 +959,6 @@ h4 {
     h4,
     h5,
     h6,
-    p,
     #disqus_thread {
         padding-left: 10px!important;
         padding-right: 10px!important;
@@ -909,6 +967,8 @@ h4 {
         background-attachment: scroll;
     }
     .navbar .nav {
+        display: flex;
+        flex-direction: column;
         padding-top: 0;
         border-top: 1px solid rgba(0, 0, 0, .2);
         float: none!important;
@@ -924,9 +984,8 @@ h4 {
         -ms-transform: none;
     }
     .nav > li {
+        list-style: none;
         margin-top: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, .1);
-        background: rgba(0, 0, 0, .05);
         text-align: left;
         padding-left: 15px;
         width: 100%;
@@ -982,6 +1041,9 @@ h4 {
     .bloc-lg {
         padding: 40px 0;
     }
+    .bloc-lg{
+        width: 100%;
+    }
     .bloc-sm,
     .bloc-md {
         padding-left: 0;
@@ -1026,17 +1088,14 @@ h4 {
         width: 180px;
         height: 320px;
     }
+    .bloc-mob-center-text {
+        text-align: center;
+    }
 }
 
 @media (max-width: 400px) {
     .bloc {
         padding-left: 0;
         padding-right: 0;
-    }
-}
-
-@media (max-width: 767px) {
-    .bloc-mob-center-text {
-        text-align: center;
     }
 }
