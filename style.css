@@ -410,6 +410,10 @@ a:hover {
     }
 }
 
+main{
+    padding-inline: 10px;
+}
+
 .row-flex{
     justify-content: center;
     display: flex;
