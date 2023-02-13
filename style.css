@@ -304,8 +304,7 @@ a:hover {
 }
 
 .navbar-brand img {
-    max-height: 70px;
-    height: 100px;
+    height: 45px;
     justify-content: left;
 }
 
